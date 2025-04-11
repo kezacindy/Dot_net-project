@@ -34,7 +34,7 @@ namespace E_Commerce_First
                     lblMsg.ForeColor = System.Drawing.Color.Green;
 
                 }
-                //Response.Redirect("~/SignIn.aspx");
+                Response.Redirect("~/SignIn.aspx");
             }
             else
             {

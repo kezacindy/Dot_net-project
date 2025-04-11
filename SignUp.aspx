@@ -78,7 +78,7 @@ Inherits="E_Commerce_First.SignUp" %>
                     <li><a href="WomanSarees.aspx">Saree</a></li>
                   </ul>
                 </li>
-                <li><a href="SignUp.aspx">Registration</a></li>
+                <li><a href="SignIn.aspx">SignIn</a></li>
                 <%--
                 <li>
                   <button

@@ -53,7 +53,7 @@
                                     <li><a href="WomanSarees.aspx">Saree</a></li>
                                 </ul>
                             </li>
-                            <li><a href="SignUp.aspx">Registration</a> </li>
+                            <li><a href="SignUp.aspx">SignUp</a> </li>
                             <%--
                             <li>
                                 <button id="btnCart" class="btn btn-primary navbar-btn " type="button">
