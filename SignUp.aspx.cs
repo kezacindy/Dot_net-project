@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace E_Commerce_First
 {
@@ -24,7 +26,18 @@ namespace E_Commerce_First
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("Insert into tblUsers(Username,Password,Email,Name,Usertype) Values('" + txtUname.Text + "','" + txtPass.Text + "','" + txtEmail.Text + "','" + txtName.Text + "','User')", con);
+
+                    // Hash the password before saving it
+                    string hashedPassword = HashPassword(txtPass.Text);
+
+                    // Use SQL parameters to prevent SQL injection
+                    SqlCommand cmd = new SqlCommand("INSERT INTO tblUsers (Username, Password, Email, Name, Usertype) VALUES (@Username, @Password, @Email, @Name, @Usertype)", con);
+                    cmd.Parameters.AddWithValue("@Username", txtUname.Text);
+                    cmd.Parameters.AddWithValue("@Password", hashedPassword);
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                    cmd.Parameters.AddWithValue("@Usertype", "User");
+
                     cmd.ExecuteNonQuery();
 
                     Response.Write("<script> alert('Registration Successfully done');  </script>");
@@ -32,8 +45,8 @@ namespace E_Commerce_First
                     con.Close();
                     lblMsg.Text = "Registration Successfully done";
                     lblMsg.ForeColor = System.Drawing.Color.Green;
-
                 }
+
                 Response.Redirect("~/SignIn.aspx");
             }
             else
@@ -41,17 +54,29 @@ namespace E_Commerce_First
                 Response.Write("<script> alert('Registration failed');  </script>");
                 lblMsg.ForeColor = System.Drawing.Color.Red;
             }
-
         }
 
+        // Method to hash password using SHA256
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
 
         private bool isformvalid()
         {
             if (txtUname.Text == "")
             {
-                Response.Write("<script> alert('username not valid');  </script>");
+                Response.Write("<script> alert('Username not valid');  </script>");
                 txtUname.Focus();
-
                 return false;
             }
             else if (txtPass.Text == "")
@@ -62,7 +87,7 @@ namespace E_Commerce_First
             }
             else if (txtPass.Text != txtCPass.Text)
             {
-                Response.Write("<script> alert('confirm Password not valid');  </script>");
+                Response.Write("<script> alert('Confirm password does not match');  </script>");
                 txtCPass.Focus();
                 return false;
             }
@@ -90,7 +115,5 @@ namespace E_Commerce_First
             txtEmail.Text = string.Empty;
             txtCPass.Text = string.Empty;
         }
-
-
     }
 }
