@@ -74,7 +74,7 @@
                 <h2>Login Form</h2>
                 <hr />
                 <div class ="form-group">
-                    <asp:Label ID="Label1" CssClass ="col-md-2 control-label " runat="server" Text="UserName"></asp:Label>
+                    <asp:Label ID="Label1" CssClass ="col-md-2 control-label " runat="server" Text="Email"></asp:Label>
                     <div class ="col-md-3 ">
 
                         <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
@@ -144,7 +144,7 @@
             <div class ="alert alert-danger ">
              <p class ="pull-right "><a href ="#">&nbsp; &nbsp; Back to top &nbsp; &nbsp;</a></p>
                 <p class ="pull-right "><a href="AdminHome.aspx"> Admin Login  </a></p> 
-                <p>&copy;2020 Coderbaba.in &middot; <a href ="Default.aspx">Home</a>&middot;<a href ="#">About</a>&middot;<a href ="#">Contact</a>&middot;<a href ="#">Products</a> </p>
+                <p>&copy;2025 Burikantu shop &middot; <a href ="Default.aspx">Home</a>&middot;<a href ="#">About</a>&middot;<a href ="#">Contact</a>&middot;<a href ="#">Products</a> </p>
             </div>
 
         </footer>

@@ -202,7 +202,7 @@ Inherits="E_Commerce_First.SignUp" %>
           </p>
           <p class="pull-right"><a href="AdminHome.aspx"> Admin Login </a></p>
           <p>
-            &copy;2020 Coderbaba.in &middot;
+            &copy;2025 Burikantu shop &middot;
             <a href="Default.aspx">Home</a>&middot;<a href="#">About</a
             >&middot;<a href="#">Contact</a>&middot;<a href="#">Products</a>
           </p>

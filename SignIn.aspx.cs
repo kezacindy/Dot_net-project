@@ -106,10 +106,10 @@ namespace E_Commerce_First
                     lblError.Text = "Invalid Username and password";
                 }
 
-                //Response.Write("<script> alert('Login Successfully done');  </script>");
+                Response.Write("<script> alert('Login Successfully done');  </script>");
                 clr();
                 con.Close();
-                //lblMsg.Text = "Registration Successfully done";
+               // lblMsg.Text = "Registration Successfully done";
                 //lblMsg.ForeColor = System.Drawing.Color.Green;
 
             }
