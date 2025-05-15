@@ -1,0 +1,431 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #f4f4f4; /* Default */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- ADD STYLES FOR LOGIN PAGE --- */
+
+.login-page-body {
+  /* Apply this class to the body or a wrapper div if needed */
+  background: linear-gradient(to right, #006da4, #feb47b);
+  min-height: 100vh; /* Ensure gradient covers full height */
+  color: #b1c9ef;
+  font-family: "Arial", sans-serif;
+}
+
+.login-page-body .form-group label {
+  color: #b1c9ef; /* Label color specific to this page context */
+}
+
+.login-page-body h2 {
+  color: #f0f8ff; /* Lighter color for heading */
+  animation: fadeInDown 1s;
+}
+.login-page-body p {
+  color: #e0f7fa; /* Lighter color for paragraph */
+}
+
+.login-page-body form {
+  animation: fadeInUp 1s;
+}
+
+/* Override default Bootstrap button ONLY within login context if possible */
+.login-page-body .btn-primary {
+  background-color: #ff7e5f !important; /* Use important if needed to override bootstrap */
+  border: none !important;
+  color: white !important;
+}
+.login-page-body .btn-primary:hover {
+  background-color: #feb47b !important;
+}
+
+.login-page-body .btn-google {
+  background-color: #db4437 !important;
+  border: none !important;
+  color: white !important; /* Add text color */
+}
+.login-page-body .btn-google:hover {
+  background-color: #c23321 !important;
+}
+
+.login-page-body .linkControl {
+  color: #ffdd57; /* Link color */
+  font-weight: bold;
+}
+.login-page-body .linkControl:hover {
+  color: #fff;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- END LOGIN PAGE STYLES --- */
+
+/*=============================================================================================================*/
+
+/* src/index.css */
+
+/* --- Keep existing styles from previous steps --- */
+
+/* --- ADD/UPDATE STYLES FOR REGISTER PAGE --- */
+
+/* Use a common class for auth pages if styles are similar */
+.auth-page-body {
+  background: linear-gradient(135deg, #5dade2, #2e86c1);
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  color: #ecf0f1;
+  /* animation: background-animation 10s infinite alternate; */ /* Reuse if defined */
+}
+
+/* Specific Container for gradient background */
+.auth-page-gradient-container {
+  background: linear-gradient(135deg, #5dade2, #2e86c1);
+  min-height: 100vh; /* Ensure gradient covers view height */
+  padding-top: 60px; /* Adjust as needed, depends on header height */
+  padding-bottom: 60px;
+}
+
+@keyframes background-animation {
+  /* Define if not already present */
+  0% {
+    background: linear-gradient(135deg, #5dade2, #2e86c1);
+  }
+  100% {
+    background: linear-gradient(135deg, #2e86c1, #5dade2);
+  }
+}
+
+.auth-page-body .container {
+  /* Style container within this specific page */
+  margin-top: 60px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  /* Define if not already present */
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.form-container {
+  /* Common style for login/register form box */
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Common form control focus */
+.auth-page-body .form-control:focus {
+  box-shadow: 0px 0px 10px rgba(0, 173, 239, 0.5);
+  border-color: #5dade2;
+}
+
+/* Common button style override */
+.auth-page-body .btn-primary {
+  background-color: #5dade2 !important;
+  border-color: #3498db !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color: white !important;
+}
+
+.auth-page-body .btn-primary:hover {
+  background-color: #3498db !important;
+  box-shadow: 0px 0px 10px rgba(0, 173, 239, 0.5);
+}
+
+/* Common link style */
+.auth-page-body .linkControl {
+  color: #ffdd57; /* Brighter link */
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+.auth-page-body .linkControl:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Text colors within the auth page context */
+.auth-page-body h3,
+.auth-page-body p,
+.auth-page-body label,
+.auth-page-body small,
+.auth-page-body span {
+  color: #ecf0f1;
+}
+
+/* --- END REGISTER PAGE STYLES --- */
+
+
+/*====================================================================================*/
+
+/* src/index.css */
+
+/* ... Keep existing global styles ... */
+
+/* --- STYLES FOR ADMIN DASHBOARD PAGE --- */
+.admin-dashboard-body { /* Apply to body or a wrapper for this page */
+  background: linear-gradient(to right, #006DA4, #feb47b);
+  color: #333; /* Default text color for content on this background */
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+}
+
+/* If you have a specific Admin Navbar distinct from the main one */
+.admin-dashboard-body .admin-navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #004D80 !important; /* Override Bootstrap bg-light if needed */
+}
+.admin-dashboard-body .admin-navbar .nav-link,
+.admin-dashboard-body .admin-navbar .navbar-brand {
+  color: #fff !important; /* Light text for dark admin navbar */
+}
+
+
+.admin-dashboard-body .jumbotron {
+  background-color: #fff;
+  color: #333; /* Dark text for light jumbotron */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: adminFadeInDown 1s; /* Use a distinct animation name */
+  border-radius: 0.5rem; /* Add some rounding */
+  padding: 2rem 2rem; /* Bootstrap default is 4rem, adjust as needed */
+}
+
+.admin-dashboard-body .card { /* Style for action cards */
+  background: #f0f8ff; /* AliceBlue */
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  animation: adminFloatUpDown 3s ease-in-out infinite;
+  margin-bottom: 20px;
+  border-radius: 0.5rem;
+}
+.admin-dashboard-body .card .btn-primary { /* Button specific to these cards */
+  background-color: #ff7e5f !important;
+  border: none !important;
+  color: white !important;
+}
+.admin-dashboard-body .card .btn-primary:hover {
+  background-color: #feb47b !important;
+}
+
+.admin-dashboard-body .chart-container {
+  background: #ffffff; /* White background for charts for better contrast */
+  color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* max-width: 500px; Remove fixed max-width for better responsiveness */
+  /* max-height: 350px; Remove fixed max-height */
+  margin: 20px auto;
+  /* animation: adminFloatUpDown 3s ease-in-out infinite; Maybe not for charts */
+}
+
+.admin-dashboard-body .chart-container h5 {
+  color: #004D80; /* Dark blue for chart titles */
+}
+
+
+@keyframes adminFadeInDown { /* Distinct animation name */
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes adminFloatUpDown { /* Distinct animation name */
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-5px); /* More subtle float */
+  }
+}
+
+
+.admin-dashboard-body .jumbotron-replacement { /* Style for the new Jumbotron div */
+  background-color: #fff !important; /* Light background */
+  color: #333 !important; /* Dark text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: adminFadeInDown 1s;
+  border-radius: 0.5rem;
+  /* padding is set inline or through bootstrap classes like p-5 */
+}
+
+
+/* --- END ADMIN DASHBOARD PAGE STYLES --- */
+
+
+/*=============================================================================================*/
+
+/* src/index.css */
+/* ... */
+.admin-page-container {
+  background-color: #f8f9fa; /* Light grey background for admin sections */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-page-container h2 {
+  color: #004D80; /* Match admin theme */
+}
+
+.admin-page-container .table {
+  background-color: white; /* Ensure table is on white for readability */
+}
+
+.admin-page-container .thead-light th {
+  background-color: #e9ecef; /* Standard light head */
+  color: #495057;
+}
+/* ... */
+
+/*========================================================================================*/
+
+/* src/index.css */
+/* ... */
+.admin-page-body { /* Assuming you have this from AdminDashboard */
+  background: linear-gradient(to right, #006DA4, #feb47b);
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+}
+
+.admin-page-body .admin-page-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: #333; /* Text color for content on light background */
+}
+
+.admin-page-body .admin-page-container h2 {
+  color: #004D80;
+}
+.admin-page-body .admin-page-container .form-label {
+  color: #495057; /* Bootstrap default label color */
+}
+
+.admin-page-body .admin-page-container .btn-primary {
+  background-color: #0059b3 !important;
+  border-color: #0059b3 !important;
+  color: white !important;
+}
+.admin-page-body .admin-page-container .btn-primary:hover {
+  background-color: #003366 !important;
+  border-color: #003366 !important;
+}
+.admin-page-body .admin-page-container .btn-secondary {
+   color: #fff;
+   background-color: #6c757d;
+   border-color: #6c757d;
+}
+.admin-page-body .admin-page-container .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+/* ... */
+
+/*=====================================================================================*/
+/* src/index.css - ensure these or similar are present */
+.admin-page-body {
+  background: linear-gradient(to right, #006DA4, #feb47b);
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+}
+
+.admin-page-body .admin-page-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: #333;
+}
+
+.admin-page-body .admin-page-container h2 {
+  color: #004D80;
+  margin-bottom: 1.5rem; /* More space below heading */
+}
+.admin-page-body .admin-page-container .table {
+  background-color: white;
+  font-size: 0.9rem; /* Slightly smaller table font */
+}
+
+.admin-page-body .admin-page-container .table th,
+.admin-page-body .admin-page-container .table td {
+  vertical-align: middle; /* Better alignment for image and text */
+}
+
+.admin-page-body .admin-page-container .thead-light th {
+  background-color: #e9ecef;
+  color: #495057;
+  font-weight: 600; /* Bolder headers */
+}
+
+.admin-page-body .admin-page-container .btn-primary {
+  background-color: #0059b3 !important;
+  border-color: #0059b3 !important;
+  color: white !important;
+}
+.admin-page-body .admin-page-container .btn-primary:hover {
+  background-color: #003366 !important;
+  border-color: #003366 !important;
+}
+/* Add styles for warning and danger buttons if not already globally styled well */
+.admin-page-body .admin-page-container .btn-warning {
+  color: #212529; /* Darker text for better contrast on yellow */
+}
+.admin-page-body .admin-page-container .btn-warning:hover {
+  color: #212529;
+}
